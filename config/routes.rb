@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profile/index' => 'profile#index'
+
   root 'talker#index'
   resources :talker, except: :index
   resources :learn

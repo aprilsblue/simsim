@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803100409) do
+ActiveRecord::Schema.define(version: 20160502072809) do
 
-  create_table "chats", force: :cascade do |t|
-    t.string   "chat_type"
-    t.text     "chat_content"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "learns", force: :cascade do |t|
+    t.string   "ask"
+    t.string   "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "talks", force: :cascade do |t|
-    t.text     "ask"
-    t.text     "answer"
+    t.string   "ask"
+    t.string   "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

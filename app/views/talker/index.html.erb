@@ -2,27 +2,37 @@
   <a href="/learn">
     <button class="learn-button">가르치러 가기</button>
   </a>
+  <a href="/profile/index">
+    <div id="imgcontainer">
+      <img id="gotoimg" src= <%= asset_path "profile.png" %>/>
+    </div>
+  </a>
   <section class="chat">
-    <div class="right">
-      <div class="profile">
-        <div class="icon"></div>
-        <div class="name">유저</div>
+   
+    <!-- 추가 채팅 -->
+    <% @chats.each do |c| %>
+      <div class="right">
+        <div class="profile">
+          <div class="icon"></div>
+          <div class="name">유저</div>
+        </div>
+        <div class="balloon">
+          <div class="tail"></div>
+          <div class="text"><%= c.ask %></div>
+        </div>
       </div>
-      <div class="balloon">
-        <div class="tail"></div>
-        <div class="text">안녕</div>
+      <div class="left">
+        <div class="profile">
+          <div class="icon"></div>
+          <div class="name">심심이</div>
+        </div>
+        <div class="balloon">
+          <div class="tail"></div>
+          <div class="text"><%= c.answer %></div>
+        </div>
       </div>
-    </div>
-    <div class="left">
-      <div class="profile">
-        <div class="icon"></div>
-        <div class="name">심심이</div>
-      </div>
-      <div class="balloon">
-        <div class="tail"></div>
-        <div class="text">반가워!</div>
-      </div>
-    </div>
+    <% end %>
+    
   </section>
   <form action="/talker" method="post" class="chat-form">
     <input type="text" placeholder="입력..." name="ask" required>
